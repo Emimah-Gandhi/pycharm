@@ -1,0 +1,66 @@
+<html>
+<head>
+<title> hi </title>
+</head>
+<body>
+<form>
+	Name<input type="text" id="nat">
+	<br>
+	Password<input type="password" id="pwd1" >
+	<br>
+	<input type="radio" id="r1" name="gender" value="male" >Male
+	<br>
+	<input type="radio" id="r2" name="gender" value="female" >Female
+	<br>
+	<br>
+	Hello box<input type="text" id="1" >
+	<br>
+	<br>
+	<input type="checkbox" id="i1" name="vehicle" value="car">Car
+	<input type="checkbox" id="i2" name="vehicle" value="bike">Bike
+	<input type="checkbox" id="i3" name="vehicle" value="lorry">Lorry
+	<input type="checkbox" id="i4" name="vehicle" value="aero">Aeroplane
+	<input type="checkbox" id="i5" name="vehicle" value="jeep">Jeep
+	<input type="checkbox" id="i6" name="vehicle" value="ship">Ship
+	
+	<input type="button" id="button1" value="CLICK" onchange="fun()" >
+	<br>
+</form>
+<script>
+function fun()
+{ 
+	var uid= document.getElementById("nat").value;
+	var pwd= document.getElementById("pwd1").value;	
+	var gen= document.getElementsByName("gender");
+	var gen1;
+	var veh= document.getElementsByName("vehicle");
+	var veh1=[];
+	for(var i=0;i<2;i++)
+	{
+		if(gen[i].checked)
+		{
+			gen1=gen[i].value;
+		}
+	}	
+	for(var i=0;i<6;i++)
+	{
+		if(veh[i].checked)
+		{ 
+			veh1[i]=veh[i].value;
+		}
+	}	
+	if(uid==pwd)
+	{
+		document.write("Welcome " + uid + "<br>" + gen1 + "<br>");
+	for (i=0;i<veh1.length;i++)
+	    {
+		  if(veh1[i]!=undefined)
+		  {
+		  document.write(veh1[i]+"<br>");
+		  }
+	    }	
+	}
+}
+</script>
+</body>
+</html>	
